@@ -1,0 +1,17 @@
+{
+    "name": "package-updater",
+    "version": "0.0.1",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "start": "node ."
+    },
+    "bin": "./index.js",
+    "author": "Shabab Karim",
+    "license": "UNLICENSED",
+    "devDependencies": {},
+    "dependencies": {
+        "chalk": "^5.4.1",
+        "commander": "^13.1.0"
+    }
+}
