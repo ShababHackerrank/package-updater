@@ -22,7 +22,7 @@ program
     .addOption(
         new Option(
             '-n, --new-version [string]',
-            'semantic version to be upgraded to'
+            'semantic version to be upgraded to; does not accept ranges'
         )
     )
     .addOption(
@@ -45,7 +45,7 @@ program
     )
     .action(async (pkg, options) => {
         console.log(
-            chalk.blue(
+            chalk.yellow(
                 `Updating package ${pkg} with options ${JSON.stringify(
                     options
                 )}`
