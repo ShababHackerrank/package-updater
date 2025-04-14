@@ -43,6 +43,12 @@ program
             "run 'npm test' post-install; will automatically apply package.json changes before"
         ).default(false)
     )
+    .addOption(
+        new Option(
+            '-p, --package-manager [string]',
+            "package manager to use; options are: 'npm' and 'yarn'"
+        ).default('npm')
+    )
     .action(async (pkg, options) => {
         console.log(
             chalk.yellow(
