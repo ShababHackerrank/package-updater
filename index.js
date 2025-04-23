@@ -27,8 +27,14 @@ program
     )
     .addOption(
         new Option(
-            '-d, --dir [path]',
-            'sub-directory to begin recursive search'
+            '-i, --include-dirs [paths]',
+            'comma separated list of sub-directories to recursively search in'
+        )
+    )
+    .addOption(
+        new Option(
+            '-e, --exclude-dirs [paths]',
+            'comma separated list of sub-directories to ignore'
         )
     )
     .addOption(
