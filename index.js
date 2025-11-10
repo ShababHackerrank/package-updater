@@ -45,6 +45,12 @@ program
     )
     .addOption(
         new Option(
+            '-o, --override [boolean]',
+            "apply the package update as an override (used for transitive dependencies)"
+        ).default(false)
+    )
+    .addOption(
+        new Option(
             '-t, --test [boolean]',
             "run 'npm test' post-install; will automatically apply package.json changes before"
         ).default(false)
