@@ -1,6 +1,6 @@
 # Package Updater CLI
 
-A simple command-line task management tool built with Node.js and TypeScript.
+A simple command-line tool to update NodeJS packages in a project
 
 ## Installation
 
@@ -61,28 +61,13 @@ npm run dev -- [command]
 package-updater update <package>
 ```
 
-## Project Structure
+### Performing Updates in hrw-lambda
+1. Create a [doc](https://docs.google.com/document/d/1qiH-x6jDJIL7ojH5Crxka6F4MAv79rDPBqidRexcRw4/edit?usp=sharing) like this one
+2. List out affected paths at the bottom from the Dependabot issues on Github (simple way to do this is to copy & paste all the issues and parse out the list of paths)
+3. Create the CLI command - verify the package, version are correct
+4. Run the command at the root of the hrw-lambda repo
 
-```
-package-updater/
-├── src/
-│   └── index.ts    # Main CLI application
-├── .dist/          # Compiled JavaScript files
-├── package.json    # Dependencies and scripts
-├── tsconfig.json   # TypeScript configuration
-└── README.md       # Documentation
-```
-
-## Development
-
-### Running in Development Mode
-
-```bash
-npm run dev -- [command]
-```
-
-### Building the Project
-
-```bash
-npm run build
-```
+#### Caveats
+1. You can re-run the command multiple times, but if it sees that the package.json is already updated, then it will skip both the install and test portion. To force it to re-run, simply undo the change in the package.json file
+2. Use the flag `-o` to update the resolutions section if it is a transitive dependency. Otherwise omit the `-o` flag and it will update either `dependencies` or `devDependencies`
+3. If the transitive dependency is introduced by `common-packages` I recommend not using this bandaid approach and directly updating `common-packages` itself
