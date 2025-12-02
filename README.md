@@ -24,13 +24,7 @@ A simple command-line tool to update NodeJS packages in a project
     npm install
     ```
 
-3. Build the project
-
-    ```bash
-    npm run build
-    ```
-
-4. Link the CLI globally (optional)
+3. Link the CLI globally (optional)
     ```bash
     npm link
     ```
@@ -44,13 +38,7 @@ You can run the CLI using:
 package-updater [command]
 
 # If you didn't link it globally
-npx tsx src/main.ts [command]
-```
-
-Or during development:
-
-```bash
-npm run dev -- [command]
+npm start
 ```
 
 ### Available Commands
